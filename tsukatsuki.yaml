@@ -1,0 +1,17 @@
+project:
+  name: test123
+  port: 5500
+  runtime: go
+server:
+  ip: 192.168.122.123
+  setup_user: alie
+webserver:
+  type: caddy
+  domain: oke.com
+path:
+  local_path: /home/alie/code/golang/tsukatsuki-test
+  remote_path: /home/tsukatsuki/test123
+  output_dir: deploy
+github_actions:
+  mode: actions-ci
+  branch: main

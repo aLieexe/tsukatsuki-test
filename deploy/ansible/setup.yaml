@@ -1,0 +1,8 @@
+- hosts: setup
+  become: true
+  become_method: sudo
+  roles:
+    - common
+    - docker
+    - caddy
+  
