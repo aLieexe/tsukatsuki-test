@@ -4,7 +4,7 @@ project:
   runtime: go
   build_image: golang:1.24.4-bookworm
 server:
-  ip: 192.168.122.172
+  ip: 192.168.122.171
   setup_user: alie
   ssh_port: 2222
   security: true
