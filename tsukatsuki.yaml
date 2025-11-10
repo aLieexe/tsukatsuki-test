@@ -1,17 +1,24 @@
 project:
-  name: test123
+  name: tsukatsuki-test
   port: 5500
   runtime: go
+  build_image: golang:1.24.4-bookworm
 server:
-  ip: 192.168.122.123
+  ip: 192.168.122.172
   setup_user: alie
+  ssh_port: 2222
+  security: true
 webserver:
   type: caddy
-  domain: oke.com
+  domain: test.com
+  docker_image: caddy:2.10.2-alpine
+services:
+- name: postgresql
+  docker_image: postgres:18.0-alpine
+- name: redis
+  docker_image: redis:8.2-alpine3.22
 path:
   local_path: /home/alie/code/golang/tsukatsuki-test
-  remote_path: /home/tsukatsuki/test123
+  remote_path: /home/tsukatsuki/tsukatsuki-test
   output_dir: deploy
-github_actions:
-  mode: actions-ci
-  branch: main
+github_actions: []

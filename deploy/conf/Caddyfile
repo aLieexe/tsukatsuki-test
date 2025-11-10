@@ -1,4 +1,4 @@
-oke.com {
+test.com {
 	# Should be able to just let docker DNS handle the rest
 	reverse_proxy app:5500 {
 		header_up X-Forwarded-Proto {scheme}
