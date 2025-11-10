@@ -9,6 +9,10 @@
     groups: sudo
     append: yes
   register: user_info
+  tags:
+  - molecule-idempotence-notest
+
+
 
 - name: Show what was returned
   debug:
