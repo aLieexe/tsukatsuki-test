@@ -63,7 +63,10 @@
     password_lock: false
     password: "!"
   register: user_info
-  when: not molecule_testing  | default(false)
+  tags:
+  - molecule-idempotence-notest
+
+
 
 
 - name: Check password status of deploy user
@@ -80,7 +83,10 @@
 - name: Ensure the deploy user account is unlocked
   ansible.builtin.command:
     cmd: "passwd -d {{ hostvars['deploy_user'].ansible_user }}"
-  when: not molecule_testing  | default(false)
+  tags:
+  - molecule-idempotence-notest
+
+
 
 
 - name: Check password status of deploy user
