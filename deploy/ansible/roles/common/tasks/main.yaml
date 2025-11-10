@@ -63,6 +63,8 @@
     password_lock: false
     password: "!"
   register: user_info
+  when: not molecule_testing  | default(false)
+
 
 - name: Check password status of deploy user
   ansible.builtin.command:
